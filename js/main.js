@@ -18,7 +18,7 @@ function createTable(board){
 
 //white objects
 var whitePawn = {};
-var whiteRock = {};
+var whiteRook = {};
 var whiteKnight = {};
 var whiteBishop = {};
 var whiteQueen= {};
