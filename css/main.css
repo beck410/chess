@@ -1,1 +1,13 @@
-hi 
+.black {
+        background-color: #2f2b2b;
+        
+}
+.white {
+        background-color: #FFF;
+        
+}
+body {
+        width: 640px;
+        height: 640px;
+}
+
