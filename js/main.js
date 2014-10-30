@@ -15,3 +15,12 @@ function createTable(board){
   $('table').append($tr);
   });
 }
+
+//white objects
+var whitePawn = {};
+var whiteRook = {};
+var whiteKnight = {};
+var whiteBishop = {};
+var whiteQueen= {};
+var whiteKing = {}:
+
