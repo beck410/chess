@@ -14,3 +14,14 @@ function createTable(board){
   $(table).appendChild($td);
   });
 }
+
+//Variables for Black Pieces
+
+var blackRook {};
+var blackKnight {};
+var blackBishop {};
+var blackKing {};
+var blackQueen {};
+var blackPawn {};
+
+
