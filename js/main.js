@@ -27,8 +27,12 @@ var blackQueen = {};
 var blackPawn = {};
 
 //white objects
-var whitePawn = {};
-var whiteRook = {};
+var whitePawn = {
+  image: "images/whitepawn.png"
+};
+var whiteRook = {
+  image: "images/whiterook.png"
+};
 var whiteKnight = {};
 var whiteBishop = {};
 var whiteQueen= {};
