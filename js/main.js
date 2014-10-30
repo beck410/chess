@@ -18,42 +18,42 @@ function createTable(board){
 }
 
 
-//Variables for Black Pieces
-var blackRook = {
-    image:"images/blackrook.png",
+//Objects for green Pieces
+var greenRook = {
+    image:"images/g-rook.png"
 };
-var blackKnight = {
-    image:"images/blackknight.png",
+var greenKnight = {
+    image:"images/g-knight.png"
 };
-var blackBishop = {
-    image:"images/blackbishop.png",
+var greenBishop = {
+    image:"images/g-bishop.png"
 };
-var blackKing = {
-    image:"images/blackking.png",
+var greenKing = {
+    image:"images/g-king.png"
 };
-var blackQueen = {
-    image:"images/blackqueen.png",
+var greenQueen = {
+    image:"images/g-queen.png"
 };
-var blackPawn = {
-    image:"images/blackpawn.png",
+var greenPawn = {
+    image:"images/g-pawn.png"
 };
 
-//white objects
-var whitePawn = {
-  image: "images/whitepawn.png",
+//Objects for orange pieces
+var orangePawn = {
+  image: "images/o-pawn.png"
 };
-var whiteRook = {
-  image: "images/whiterook.png",
+var orangeRook = {
+  image: "images/o-rook.png"
 };
-var whiteKnight = {
-  image: "images/whiteknight.png",
+var orangeKnight = {
+  image: "images/o-knight.png"
 };
-var whiteBishop = {
-  image: "images/whitebishop.png",
+var orangeBishop = {
+  image: "images/o-bishop.png"
 };
-var whiteQueen= { 
-  image: "images/whitequeen.png",
+var orangeQueen= { 
+  image: "images/o-queen.png"
 };
-var whiteKing = {
-  image: "images/whiteking.png",
+var orangeKing = {
+  image: "images/o-king.png"
 };
