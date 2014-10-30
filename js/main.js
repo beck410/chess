@@ -19,12 +19,24 @@ function createTable(board){
 
 
 //Variables for Black Pieces
-var blackRook = {};
-var blackKnight = {};
-var blackBishop = {};
-var blackKing = {};
-var blackQueen = {};
-var blackPawn = {};
+var blackRook = {
+    image:"images/blackrook.png",
+};
+var blackKnight = {
+    image:"images/blackknight.png",
+};
+var blackBishop = {
+    image:"images/blackbishop.png",
+};
+var blackKing = {
+    image:"images/blackking.png",
+};
+var blackQueen = {
+    image:"images/blackqueen.png",
+};
+var blackPawn = {
+    image:"images/blackpawn.png",
+};
 
 //white objects
 var whitePawn = {};
