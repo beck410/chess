@@ -21,4 +21,6 @@ var whiteRook = {};
 var whiteKnight = {};
 var whiteBishop = {};
 var whiteQueen= {};
-var whiteKing = {}:
+var whiteKing = {};
+
+>>>>>>> 23b457ddfe9b9d58fa6f0e8b213235e961d76700
