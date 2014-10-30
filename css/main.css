@@ -1,13 +1,19 @@
-.black {
+tr:nth-child(even) td:nth-child(odd), tr:nth-child(odd) td:nth-child(even) {
         background-color: #2f2b2b;
-        
+
 }
-.white {
+tr:nth-child(odd) td:nth-child(odd), tr:nth-child(even) td:nth-child(even) {
         background-color: #FFF;
-        
+
 }
-body {
+table {
         width: 640px;
         height: 640px;
 }
-
+td{
+  width:80px;
+  height:80px;
+}
+table{
+  border:1px solid black
+}
