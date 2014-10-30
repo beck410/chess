@@ -7,7 +7,7 @@ function createTable(board){
   $(table).innerHTML = '';
   board.forEach(function(row){
   var $tr = $('<tr>');
-  row.forEach(cell){
+  row.forEach(function(cell){
     var $td = $('<td>');
     $tr.appendChild($td);
   });
