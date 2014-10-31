@@ -1,7 +1,7 @@
 $(document).ready(function(){
   createTable(board);
   var data = [];
-  $('table').find('tr').each(function(x,r){ data.push(r)});
+  $('table').find('tr').each(function(index,cell){ data.push(cell)});
   console.log(data);
  $('td').click(function(){$(this).addClass('selected')})
 
@@ -14,8 +14,8 @@ function createTable(board){
     var $tr = $('<tr>');
     row.forEach(function(cell){
       var $td = $('<td>');
-      if(cell.image){
-        $td.css('background-image', "url("+ cell.image + ")");
+      if(cell[0].image){
+        $td.css('background-image', "url("+ cell[0].image + ")");
       }
       $tr.append($td);
       });
@@ -113,7 +113,13 @@ var orangeKing = {
 };
 
 
-var board = [[greyRook,greyKnight,greyBishop,greyQueen,greyKing,greyBishop,greyKnight,greyRook],[greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn],[orangeRook,orangeKnight,orangeBishop,orangeQueen,orangeKing,orangeBishop,orangeKnight,orangeRook]];
+var board = [[[greyRook,0],[greyKnight,0],[greyBishop,0],[greyQueen,0],[greyKing,0],[greyBishop,0],[greyKnight,0],[greyRook,0]],
+            [[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0]],
+            [[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],
+            [[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],
+            [[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],
+            [[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0],
+            [[orangeRook,0],[orangeKnight,0],[orangeBishop,0],[orangeQueen,0],[orangeKing,0],[orangeBishop,0],[orangeKnight,0],[orangeRook,0]]];
 
 
 
