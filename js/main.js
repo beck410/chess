@@ -102,6 +102,39 @@ var greyKing = {
 var greyQueen = {
   image:"images/g-queen.png",
   move: function(){
+    //all squares left
+    for(var i=y-i; i<=0; i--){
+      if(board[x][i][0]){
+        board[x][i][1] = 1;
+        return;
+      } else{
+        board[x][i][1] = 1;
+      }      
+    }
+    //all squares right
+    for(var i=y+1; i<8; i++){
+    }
+
+    //all squares below
+    for(var i=x+1; i<8; i++){
+    }
+
+    //all squares diag top-left
+    for(var i=x, j=y; i<0 || j<=0; i--, j--){
+    }
+    
+    //all squares diag top-right
+    for(var i=x, j=y; i<=0 || j<=0; i--, j++){
+    }
+    
+    //all squares diag bottom-right
+    for(var i=x, j=y; i<=0 || j<=0; i++, j++){
+      
+    }
+    //all squares diag bottom-left
+    for(var i=x, j=y; i<=0 || j<=0; i++, j--){
+    
+    }
   },
   showMove: function(){
   }
