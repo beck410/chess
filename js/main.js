@@ -59,7 +59,7 @@ var greyQueen = {
     //all squares left
     for(var i=y-i; i<=0; i--){
       if(board[x][i][0]){
-        board[x]{i}{1} = 1;
+        board[x][i][1] = 1;
         return;
       } else{
         board[x][i][1] = 1;
