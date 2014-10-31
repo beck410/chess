@@ -1,4 +1,3 @@
-var board = [[greyRook,greyKnight,greyBishop,greyQueen,greyKing,greyBishop,greyKnight,greyRook],[greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn],[orangeRook,orangeKnight,orangeBishop,orangeQueen,orangeKing,orangeBishop,orangeKnight,orangeRook]];
 
 $(document).ready(function(){
   createTable(board);
@@ -15,6 +14,7 @@ function createTable(board){
                 var $tr = $('<tr>');
                 row.forEach(function(cell){
                         var $td = $('<td>');
+                        $td.css('background-image', "url("+ cell.image + ")");
                         $tr.append($td);
                 });
                 $('table').append($tr);
@@ -109,3 +109,6 @@ var orangeKing = {
         showMove: function(){
         },
 };
+
+
+var board = [[greyRook,greyKnight,greyBishop,greyQueen,greyKing,greyBishop,greyKnight,greyRook],[greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn],[orangeRook,orangeKnight,orangeBishop,orangeQueen,orangeKing,orangeBishop,orangeKnight,orangeRook]];
