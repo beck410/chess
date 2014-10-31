@@ -51,7 +51,7 @@ var whiteKnight = {
 var whiteBishop = {
   image: "images/whitebishop.png",
 };
-var whiteQueen= { 
+var whiteQueen= {
   image: "images/whitequeen.png",
 };
 var whiteKing = {
