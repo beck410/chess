@@ -36,6 +36,9 @@ function createTable(board){
       if(cell[0].image){
         $td.css('background-image', "url("+ cell[0].image + ")");
       }
+      if(cell[1] === 1){
+        $td.addClass('highlight');
+      }
       $tr.append($td);
       });
     $('table').append($tr);
