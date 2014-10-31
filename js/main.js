@@ -1,10 +1,29 @@
+  var x;
+  var y;
+  var data = [];
+
 $(document).ready(function(){
   createTable(board);
+  $('td').click(function(){
+  $(this).toggleClass('selected')
   var data = [];
   $('table').find('tr').each(function(index,cell){ data.push(cell)});
   console.log(data);
- $('td').click(function(){$(this).addClass('selected')})
+    setXY(data);
+  })
 
+
+  function setXY(array){
+  //  array.forEach(function(row, i){
+  for(i = 0; i< array.length ; i ++){
+        for(var j=0 ; j <array[i].children.length; j++){
+          if(array[i].children[j].classList.contains('selected') === true){
+            x = i;
+            y = j;
+          }
+        }
+    }
+  }
 });
 
 //Generate Table in the DOM
@@ -114,7 +133,6 @@ var orangeKing = {
 
 
 var board = [[[greyRook,0],[greyKnight,0],[greyBishop,0],[greyQueen,0],[greyKing,0],[greyBishop,0],[greyKnight,0],[greyRook,0]],[[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0]],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0]],[[orangeRook,0],[orangeKnight,0],[orangeBishop,0],[orangeQueen,0],[orangeKing,0],[orangeBishop,0],[orangeKnight,0],[orangeRook,0]]];
-
 
 
 
