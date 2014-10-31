@@ -1,4 +1,4 @@
-  var x;
+var x;
   var y;
   var data = [];
 
@@ -35,9 +35,6 @@ function createTable(board){
       var $td = $('<td>');
       if(cell[0].image){
         $td.css('background-image', "url("+ cell[0].image + ")");
-      }
-      if(cell[1]){
-        $td.addClass('highlight');
       }
       $tr.append($td);
       });
@@ -77,37 +74,31 @@ function createTable(board){
 var greyRook = {
   image:"images/g-rook.png",
   move: function(){
-  },
-  showMove: function(){
   }
 };
 var greyKnight = {
   image:"images/g-knight.png",
   move: function(){
-  },
-  showMove: function(){
   }
 };
 var greyBishop = {
   image:"images/g-bishop.png",
   move: function(){
-  },
-  showMove: function(){
   }
 };
 var greyKing = {
   image:"images/g-king.png",
   move: function(){
+
     for(var i = x-1 ; i <= x+1 ; i++){
-          for(var j = y-1 ; j <= y+1 ; j++){
-            if(x >= 0 && x < matrix.length && y >= 0 && y < matrix[i].length && !( x === i && y === j) && !(board[i][j][0].team === board[x][y][0].team)){
+      for(var j = y-1 ; j <= y+1 ; j++){
+        if(x >= 0 && x < matrix.length && y >= 0 && y < matrix[i].length && !( x === i && y === j) && !(board[i][j][0].team === board[x][y][0].team)){
               board[i][j][1] = 1;
-            }
-          }
-  }
-},
-  showMove: function(){
-  }
+        }
+      }
+    }
+  },
+
 };
 var greyQueen = {
   image:"images/g-queen.png",
@@ -115,7 +106,12 @@ var greyQueen = {
     //all squares left
     for(var i=y-i; i<=0; i--){
       if(board[x][i][0]){
-        board[x][i][1] = 1;
+        if(board[x][i][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[x][i][1] = 1;
+        }
         return;
       } else{
         board[x][i][1] = 1;
@@ -123,37 +119,78 @@ var greyQueen = {
     }
     //all squares right
     for(var i=y+1; i<8; i++){
+      if(board[x][i][0]){
+        if(board[x][i][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[x][i][1] = 1;
+        }
+        return;
+      } else{
+        board[x][i][1] = 1;
+      }
     }
 
     //all squares below
     for(var i=x+1; i<8; i++){
+      if(board[i][y][0]){
+        if(board[i][y][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][y][1] = 1;
+        }
+        return;
+      } else{
+        board[i][y][1] = 1;
+      }
     }
 
     //all squares diag top-left
     for(var i=x, j=y; i<0 || j<=0; i--, j--){
+      if(board[x][i][0]){
+        board[x][i][1] = 1;
+        return;
+      } else{
+        board[x][i][1] = 1;
+      }
     }
 
     //all squares diag top-right
     for(var i=x, j=y; i<=0 || j<=0; i--, j++){
+      if(board[x][i][0]){
+        board[x][i][1] = 1;
+        return;
+      } else{
+        board[x][i][1] = 1;
+      }
     }
 
     //all squares diag bottom-right
     for(var i=x, j=y; i<=0 || j<=0; i++, j++){
+      if(board[x][i][0]){
+        board[x][i][1] = 1;
+        return;
+      } else{
+        board[x][i][1] = 1;
+      }
 
     }
     //all squares diag bottom-left
     for(var i=x, j=y; i<=0 || j<=0; i++, j--){
-
+      if(board[x][i][0]){
+        board[x][i][1] = 1;
+        return;
+      } else{
+      board[x][i][1] = 1;
+      }
     }
-  },
-  showMove: function(){
   }
 };
 var greyPawn = {
   image:"images/g-pawn.png",
   move: function(){
-  },
-  showMove: function(){
   }
 };
 
@@ -161,43 +198,31 @@ var greyPawn = {
 var orangePawn = {
   image: "images/o-pawn.png",
   move: function(){
-  },
-  showMove: function(){
-  },
+  }
 };
 var orangeRook = {
   image: "images/o-rook.png",
   move: function(){
-  },
-  showMove: function(){
-  },
+  }
 };
 var orangeKnight = {
   image: "images/o-knight.png",
   move: function(){
-  },
-  showMove: function(){
-  },
+  }
 };
 var orangeBishop = {
   image: "images/o-bishop.png",
   move: function(){
-  },
-  showMove: function(){
-  },
+  }
 };
 var orangeQueen= {
   image: "images/o-queen.png",
   move: function(){
   },
-  showMove: function(){
-  },
 };
 var orangeKing = {
   image: "images/o-king.png",
   move: function(){
-  },
-  showMove: function(){
   },
 };
 
