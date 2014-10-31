@@ -95,6 +95,11 @@ var greyBishop = {
 var greyKing = {
   image:"images/g-king.png",
   move: function(){
+    for(var i = x-1 ; i <= x+1 ; i++){
+          for(var j = y-1 ; j <= y+1 ; j++){
+            if(x >= 0 && x < matrix.length && y >= 0 && y < matrix[i].length && !( x === i && y === j) && !(board[i][j][0].team === board[x][y][0].team)){
+              board[i][j][1] = 1;
+            }
   },
   showMove: function(){
   }
@@ -109,7 +114,7 @@ var greyQueen = {
         return;
       } else{
         board[x][i][1] = 1;
-      }      
+      }
     }
     //all squares right
     for(var i=y+1; i<8; i++){
@@ -122,18 +127,18 @@ var greyQueen = {
     //all squares diag top-left
     for(var i=x, j=y; i<0 || j<=0; i--, j--){
     }
-    
+
     //all squares diag top-right
     for(var i=x, j=y; i<=0 || j<=0; i--, j++){
     }
-    
+
     //all squares diag bottom-right
     for(var i=x, j=y; i<=0 || j<=0; i++, j++){
-      
+
     }
     //all squares diag bottom-left
     for(var i=x, j=y; i<=0 || j<=0; i++, j--){
-    
+
     }
   },
   showMove: function(){
