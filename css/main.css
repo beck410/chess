@@ -13,6 +13,7 @@ table {
 td{
   width:80px;
   height:80px;
+  background-size: 100px 100px;
 }
 table{
   border:1px solid black

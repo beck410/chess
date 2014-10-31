@@ -1,5 +1,8 @@
 $(document).ready(function(){
   createTable(board);
+  var data = [];
+ $('table').find('tr').each(function(x,r){ data.push(r)});
+ console.log(data);
 });
 
 //Generate Table in the DOM
