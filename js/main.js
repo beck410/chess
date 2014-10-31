@@ -19,22 +19,22 @@ function createTable(board){
 
 
 //Objects for green Pieces
-var greenRook = {
+var greyRook = {
     image:"images/g-rook.png"
 };
-var greenKnight = {
+var greyKnight = {
     image:"images/g-knight.png"
 };
-var greenBishop = {
+var greyBishop = {
     image:"images/g-bishop.png"
 };
-var greenKing = {
+var greyKing = {
     image:"images/g-king.png"
 };
-var greenQueen = {
+var greyQueen = {
     image:"images/g-queen.png"
 };
-var greenPawn = {
+var greyPawn = {
     image:"images/g-pawn.png"
 };
 
