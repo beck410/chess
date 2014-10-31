@@ -140,41 +140,61 @@ var greyQueen = {
 
     //all squares diag top-left
     for(var i=x, j=y; i<0 || j<=0; i--, j--){
-      if(board[x][i][0]){
-        board[x][i][1] = 1;
+      if(board[i][j][0]){
+        if(board[i][j][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][j][1] = 1;
+        }
         return;
       } else{
-        board[x][i][1] = 1;
+        board[i][j][1] = 1;
       }
     }
 
     //all squares diag top-right
     for(var i=x, j=y; i<=0 || j<=0; i--, j++){
-      if(board[x][i][0]){
-        board[x][i][1] = 1;
+      if(board[i][j][0]){
+        if(board[i][j][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][j][1] = 1;
+        }
         return;
       } else{
-        board[x][i][1] = 1;
+        board[i][j][1] = 1;
       }
     }
 
     //all squares diag bottom-right
     for(var i=x, j=y; i<=0 || j<=0; i++, j++){
-      if(board[x][i][0]){
-        board[x][i][1] = 1;
+      if(board[i][j][0]){
+        if(board[i][j][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][j][1] = 1;
+        }
         return;
       } else{
-        board[x][i][1] = 1;
+        board[i][j][1] = 1;
       }
 
     }
     //all squares diag bottom-left
     for(var i=x, j=y; i<=0 || j<=0; i++, j--){
-      if(board[x][i][0]){
-        board[x][i][1] = 1;
+      if(board[i][j][0]){
+        if(board[i][j][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][j][1] = 1;
+        }
         return;
       } else{
-      board[x][i][1] = 1;
+        board[i][j][1] = 1;
       }
     }
   }
