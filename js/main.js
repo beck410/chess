@@ -103,7 +103,9 @@ var greyKing = {
             if(x >= 0 && x < matrix.length && y >= 0 && y < matrix[i].length && !( x === i && y === j) && !(board[i][j][0].team === board[x][y][0].team)){
               board[i][j][1] = 1;
             }
-  },
+          }
+  }
+},
   showMove: function(){
   }
 };
