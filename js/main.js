@@ -3,6 +3,7 @@ $(document).ready(function(){
   var data = [];
   $('table').find('tr').each(function(x,r){ data.push(r)});
   console.log(data);
+ $('td').click(function(){$(this).addClass('selected')})
 
 });
 
@@ -13,11 +14,13 @@ function createTable(board){
     var $tr = $('<tr>');
     row.forEach(function(cell){
       var $td = $('<td>');
-      $td.css('background-image', "url("+ cell.image + ")");
+      if(cell.image){
+        $td.css('background-image', "url("+ cell.image + ")");
+      }
       $tr.append($td);
-    });
+      });
     $('table').append($tr);
-  });
+    });
 }
 
 
