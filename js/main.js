@@ -119,5 +119,5 @@ var board = [[greyRook,greyKnight,greyBishop,greyQueen,greyKing,greyBishop,greyK
 
 if(this.className === "selected"){
   var chessPiece = cell[x][y];
-  chessPiece.showMove():
+  chessPiece.showMove();
 }
