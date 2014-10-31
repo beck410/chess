@@ -23,8 +23,35 @@ function createTable(board){
     });
 }
 
+//Diagonal Movement
+//
+//Top Left
+//for (var i = x, j = y; i <= 0, j <= 0; x--, y--
+//
+//Top Right
+//for (var i = x, j = y; i <= 0, j <= 0; x--, y++
+//
+//Bottom Left
+//for (var i = x, j = y; i <= 0, j <= 0; x++, y--
+//
+//Bottom Right
+//for (var i = x, j = y; i <= 0, j <= 0; x++, y++
+//
+//Vertical/Horizontal Movement
+//
+//Left
+//for (var i = x; i <= 0; x--
+//
+//Right
+//for (var i = x; i <= 0; x++
+//
+//Up
+//for (var j = y; j <= 0; y--
+//
+//Down
+//for (var j = y; j <= 0; y++
 
-//Objects for green Pieces
+//Objects for grey pieces
 var greyRook = {
   image:"images/g-rook.png",
   move: function(){
@@ -114,10 +141,6 @@ var orangeKing = {
 
 
 var board = [[[greyRook,0],[greyKnight,0],[greyBishop,0],[greyQueen,0],[greyKing,0],[greyBishop,0],[greyKnight,0],[greyRook,0]],[[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0],[greyPawn,0]],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]],[[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0],[orangePawn,0]],[[orangeRook,0],[orangeKnight,0],[orangeBishop,0],[orangeQueen,0],[orangeKing,0],[orangeBishop,0],[orangeKnight,0],[orangeRook,0]]];
-
-
-
-
 
 
 //  if(this.className === "selected"){
