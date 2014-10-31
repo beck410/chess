@@ -1,7 +1,11 @@
 var board = [[greyRook,greyKnight,greyBishop,greyQueen,greyKing,greyBishop,greyKnight,greyRook],[greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn],[orangeRook,orangeKnight,orangeBishop,orangeQueen,orangeKing,orangeBishop,orangeKnight,orangeRook]];
 
 $(document).ready(function(){
-        createTable(board);
+  createTable(board);
+  var data = [];
+ $('table').find('tr').each(function(x,r){ data.push(r)});
+ console.log(data);
+
 });
 
 //Generate Table in the DOM
@@ -91,7 +95,7 @@ var orangeBishop = {
         showMove: function(){
         },
 };
-var orangeQueen= { 
+var orangeQueen= {
         image: "images/o-queen.png",
         move: function(){
         },
@@ -105,4 +109,3 @@ var orangeKing = {
         showMove: function(){
         },
 };
-
