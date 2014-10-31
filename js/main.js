@@ -4,7 +4,10 @@ $(document).ready(function(){
   $('table').find('tr').each(function(x,r){ data.push(r)});
   console.log(data);
  $('td').click(function(){$(this).addClass('selected')})
-
+  if(this.className === "selected"){
+    var chessPiece = cell[x][y];
+    chessPiece.showMove();
+  }
 });
 
 //Generate Table in the DOM
@@ -114,13 +117,3 @@ var orangeKing = {
 
 
 var board = [[greyRook,greyKnight,greyBishop,greyQueen,greyKing,greyBishop,greyKnight,greyRook],[greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn,greyPawn],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn,orangePawn],[orangeRook,orangeKnight,orangeBishop,orangeQueen,orangeKing,orangeBishop,orangeKnight,orangeRook]];
-
-
-
-
-
-
-if(this.className === "selected"){
-  var chessPiece = cell[x][y];
-  chessPiece.showMove();
-}
