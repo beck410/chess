@@ -55,7 +55,7 @@ var greyKing = {
 };
 var greyQueen = {
   image:"images/g-queen.png",
-  move: function(x,y){
+  move: function(){
     //all squares left
     for(var i=y-i; i<=0; i--){
       if(board[x][i][0]){
