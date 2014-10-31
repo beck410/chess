@@ -9,6 +9,9 @@ function createTable(board){
   var $tr = $('<tr>');
   row.forEach(function(cell){
     var $td = $('<td>');
+    if(cell.image){
+      $td.css('background-image', 'url(' + cell.image +')');
+    };
     $tr.append($td);
   });
   $('table').append($tr);
