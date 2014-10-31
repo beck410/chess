@@ -111,7 +111,12 @@ var greyQueen = {
     //all squares right
     for(var i=y+1; i<8; i++){
       if(board[x][i][0]){
-        board[x][i][1] = 1;
+        if(board[x][i][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[x][i][1] = 1;
+        }
         return;
       } else{
         board[x][i][1] = 1;
@@ -120,11 +125,16 @@ var greyQueen = {
 
     //all squares below
     for(var i=x+1; i<8; i++){
-      if(board[x][i][0]){
-        board[x][i][1] = 1;
+      if(board[i][y][0]){
+        if(board[i][y][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][y][1] = 1;
+        }
         return;
       } else{
-        board[x][i][1] = 1;
+        board[i][y][1] = 1;
       }
     }
 
