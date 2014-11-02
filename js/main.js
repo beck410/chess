@@ -77,7 +77,65 @@ function createTable(board){
 var greyRook = {
   image:"images/g-rook.png",
   move: function(){
+//all squares left
+for(var i=y-i; i<=0; i--){
+  if(board[x][i][0]){
+    if(board[x][i][0].team === board[x][y][0].team){
+      return;
+    }
+    else{
+      board[x][i][1] = 1;
+    }
+    return;
+  } else{
+    board[x][i][1] = 1;
   }
+}
+//all squares right
+for(var i=y+1; i<8; i++){
+  if(board[x][i][0]){
+    if(board[x][i][0].team === board[x][y][0].team){
+      return;
+    }
+    else{
+      board[x][i][1] = 1;
+    }
+    return;
+  } else{
+    board[x][i][1] = 1;
+  }
+}
+
+//all squares below
+for(var i=x+1; i<8; i++){
+  if(board[i][y][0]){
+    if(board[i][y][0].team === board[x][y][0].team){
+      return;
+    }
+    else{
+      board[i][y][1] = 1;
+    }
+    return;
+  } else{
+    board[i][y][1] = 1;
+  }
+}
+
+//all squares above
+for(var i=x-1; i<8; i--) {
+  if(board[i][y][0]){
+    if(board[i][y][0].team === board[x][y][0].team){
+      return;
+    }
+    else{
+      board[i][y][1] = 1;
+    }
+    return;
+  } else{
+    board[i][y][1] = 1;
+  }
+}
+
 };
 var greyKnight = {
   image:"images/g-knight.png",
@@ -137,6 +195,21 @@ var greyQueen = {
 
     //all squares below
     for(var i=x+1; i<8; i++){
+      if(board[i][y][0]){
+        if(board[i][y][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][y][1] = 1;
+        }
+        return;
+      } else{
+        board[i][y][1] = 1;
+      }
+    }
+
+    //all squares above
+    for(var i=x-1; i<8; i--) {
       if(board[i][y][0]){
         if(board[i][y][0].team === board[x][y][0].team){
           return;
@@ -226,6 +299,64 @@ var orangePawn = {
 var orangeRook = {
   image: "images/o-rook.png",
   move: function(){
+    //all squares left
+    for(var i=y-i; i<=0; i--){
+      if(board[x][i][0]){
+        if(board[x][i][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[x][i][1] = 1;
+        }
+        return;
+      } else{
+        board[x][i][1] = 1;
+      }
+    }
+    //all squares right
+    for(var i=y+1; i<8; i++){
+      if(board[x][i][0]){
+        if(board[x][i][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[x][i][1] = 1;
+        }
+        return;
+      } else{
+        board[x][i][1] = 1;
+      }
+    }
+
+    //all squares below
+    for(var i=x+1; i<8; i++){
+      if(board[i][y][0]){
+        if(board[i][y][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][y][1] = 1;
+        }
+        return;
+      } else{
+        board[i][y][1] = 1;
+      }
+    }
+
+    //all squares above
+    for(var i=x-1; i<8; i--) {
+      if(board[i][y][0]){
+        if(board[i][y][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][y][1] = 1;
+        }
+        return;
+      } else{
+        board[i][y][1] = 1;
+      }
+    }
   }
 };
 var orangeKnight = {
@@ -241,6 +372,125 @@ var orangeBishop = {
 var orangeQueen= {
   image: "images/o-queen.png",
   move: function(){
+    //all squares left
+    for(var i=y-i; i<=0; i--){
+      if(board[x][i][0]){
+        if(board[x][i][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[x][i][1] = 1;
+        }
+        return;
+      } else{
+        board[x][i][1] = 1;
+      }
+    }
+    //all squares right
+    for(var i=y+1; i<8; i++){
+      if(board[x][i][0]){
+        if(board[x][i][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[x][i][1] = 1;
+        }
+        return;
+      } else{
+        board[x][i][1] = 1;
+      }
+    }
+
+    //all squares below
+    for(var i=x+1; i<8; i++){
+      if(board[i][y][0]){
+        if(board[i][y][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][y][1] = 1;
+        }
+        return;
+      } else{
+        board[i][y][1] = 1;
+      }
+    }
+
+    //all squares above
+    for(var i=x-1; i<8; i--) {
+      if(board[i][y][0]){
+        if(board[i][y][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][y][1] = 1;
+        }
+        return;
+      } else{
+        board[i][y][1] = 1;
+      }
+    }
+
+    //all squares diag top-left
+    for(var i=x, j=y; i<0 || j<=0; i--, j--){
+      if(board[i][j][0]){
+        if(board[i][j][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][j][1] = 1;
+        }
+        return;
+      } else{
+        board[i][j][1] = 1;
+      }
+    }
+
+    //all squares diag top-right
+    for(var i=x, j=y; i<=0 || j<=0; i--, j++){
+      if(board[i][j][0]){
+        if(board[i][j][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][j][1] = 1;
+        }
+        return;
+      } else{
+        board[i][j][1] = 1;
+      }
+    }
+
+    //all squares diag bottom-right
+    for(var i=x, j=y; i<=0 || j<=0; i++, j++){
+      if(board[i][j][0]){
+        if(board[i][j][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][j][1] = 1;
+        }
+        return;
+      } else{
+        board[i][j][1] = 1;
+      }
+
+    }
+    //all squares diag bottom-left
+    for(var i=x, j=y; i<=0 || j<=0; i++, j--){
+      if(board[i][j][0]){
+        if(board[i][j][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][j][1] = 1;
+        }
+        return;
+      } else{
+        board[i][j][1] = 1;
+      }
+    }
+  }
   },
 };
 var orangeKing = {
