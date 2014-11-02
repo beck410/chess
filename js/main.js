@@ -123,7 +123,7 @@ var greyRook = {
     }
 
     //all squares above
-    for(var i=x-1; i<8; i--) {
+    for(var i=x-1; i<=0; i--) {
       if(board[i][y][0]){
         if(board[i][y][0].team === board[x][y][0].team){
           return;
@@ -211,7 +211,7 @@ var greyQueen = {
     }
 
     //all squares above
-    for(var i=x-1; i<8; i--) {
+    for(var i=x-1; i<=0; i--) {
       if(board[i][y][0]){
         if(board[i][y][0].team === board[x][y][0].team){
           return;
@@ -346,7 +346,7 @@ var orangeRook = {
     }
 
     //all squares above
-    for(var i=x-1; i<8; i--) {
+    for(var i=x-1; i<=0; i--) {
       if(board[i][y][0]){
         if(board[i][y][0].team === board[x][y][0].team){
           return;
@@ -419,7 +419,7 @@ var orangeQueen= {
     }
 
     //all squares above
-    for(var i=x-1; i<8; i--) {
+    for(var i=x-1; i=<0; i--) {
       if(board[i][y][0]){
         if(board[i][y][0].team === board[x][y][0].team){
           return;
