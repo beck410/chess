@@ -5,13 +5,24 @@ var x;
 $(document).ready(function(){
   createTable(board);
   $('td').click(function(){
-  $(this).toggleClass('selected')
+  var $td = $('td');    
+  if (this.classList.contains('selected')){
+  $(this).removeClass('selected');
+  return;
+  }
+    for (var i = 0; i < $td.length; i++){
+      if ($td[i].classList.contains('selected')) {
+         alert("You already have a piece selected"); 
+         return;
+      }
+    }
+  $(this).addClass('selected');
+  
   var data = [];
-  $('table').find('tr').each(function(index,cell){ data.push(cell)});
+  $('table').find('tr').each(function(index,cell){data.push(cell)});
   console.log(data);
     setXY(data);
   })
-
 
   function setXY(array){
   //  array.forEach(function(row, i){
@@ -508,7 +519,7 @@ var orangeQueen= {
     }
 
     //all squares above
-    for(var i=x-1; i=<0; i--) {
+    for(var i=x-1; i<=0; i--) {
       if(board[i][y][0]){
         if(board[i][y][0].team === board[x][y][0].team){
           return;
