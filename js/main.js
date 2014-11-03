@@ -45,13 +45,10 @@ function createTable(board){
   $('td').on('click',function(){
   board.forEach(function(row){
     row.forEach(function(cell){
-      if(cell[1]=== 2){
-        cell[1] = 0;
-      }
+    cell[1]=0;
     })
   })
   this.classList.add('selected');
-
   var data = [];
   $('table').find('tr').each(function(index,cell){data.push(cell)});
   setXY(data);
@@ -159,13 +156,13 @@ var greyPawn = {
                   board[x+1][y][1] = 1;
                    }
           //move diagonally right
-          if (board[x+1][y+1][1]){
+          if (board[x+1][y+1][0]){
                   if (!(board[x+1][y+1][0].team === board[x][y][0].team)){
                           board[x+1][y+1][1] = 1;
                            }
                          }
           //move diagonally left
-          if (board[x+1][y-1][1]){
+          if (board[x+1][y-1][0]){
                   if (!(board[x+1][y-1][0].team === board[x][y][0].team)){
                           board[x+1][y-1][1] = 1;
                            }
@@ -187,13 +184,13 @@ var orangePawn = {
                  board[x-1][y][1] = 1;
                    }
           //move diagonally right
-          if (board[x-1][y+1][1]){
+          if (board[x-1][y+1][0]){
                   if (!(board[x-1][y+1][0].team === board[x][y][0].team )){
                           board[x-1][y+1][1] = 1;
                            }
                          }
           //move diagonally left
-          if (board[x-1][y-1][1]){
+          if (board[x-1][y-1][0]){
                   if (!(board[x-1][y-1][0].team === board[x][y][0].team)){
                           board[x-1][y-1][1] = 1;
                            }
