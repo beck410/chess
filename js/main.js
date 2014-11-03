@@ -37,7 +37,7 @@ function createTable(board){
       }
       if(cell[1] === 1){
         $td.addClass('highlight');
-        $td.css('background-color', '#46685b');
+        $td.css('background-color', '#aab668');
       }
       if(cell[1] === 2){
         $td.addClass('selected');
@@ -390,7 +390,7 @@ function bottomLeftCheck(){
 function kingMove(){
   for(var i = x-1 ; i <= x+1 ; i++){
     for(var j = y-1 ; j <= y+1 ; j++){
-      if(x >= 0 && x < matrix.length && y >= 0 && y < matrix[i].length && !( x === i && y === j) && !(board[i][j][0].team === board[x][y][0].team)){
+      if(i >= 0 && i < 8 && j >= 0 && j < 7 && !( x === i && y === j)&& !(board[i][j][0].team === board[x][y][0].team) ){
             board[i][j][1] = 1;
       }
     }
@@ -399,42 +399,42 @@ function kingMove(){
 
 function knightMove(){
   if(x+2<8 && y+1 <8){
-    if(!(board[x+2][y+1][0].team === board[x][y].team)){
+    if(!(board[x+2][y+1][0].team === board[x][y][0].team)){
       board[x+2][y+1][1] = 1;
     }
 }
   if(x+2<8 && y-1 >=0){
-    if(!(board[x+2][y-1][0].team === board[x][y].team)){
+    if(!(board[x+2][y-1][0].team === board[x][y][0].team)){
       board[x+2][y-1][1] = 1;
     }
   }
   if(x-2 >= 0 && y+1 < 8){
-    if(!(board[x-2][y+1][0].team === board[x][y].team)){
+    if(!(board[x-2][y+1][0].team === board[x][y][0].team)){
       board[x-2][y+1][1] = 1;
     }
   }
   if(x-2 >= 0 && y-1 >= 0){
-    if(!(board[x-2][y-1][0].team === board[x][y].team)){
+    if(!(board[x-2][y-1][0].team === board[x][y][0].team)){
       board[x-2][y-1][1] = 1;
     }
   }
   if(x+1 < 8 && y+2 < 8){
-    if(!(board[x+1][y+2][0].team === board[x][y].team)){
+    if(!(board[x+1][y+2][0].team === board[x][y][0].team)){
       board[x+1][y+2][1] = 1;
     }
   }
   if(x+1 < 8 && y-2 >= 0){
-    if(!(board[x+1][y-2][0].team === board[x][y].team)){
+    if(!(board[x+1][y-2][0].team === board[x][y][0].team)){
       board[x+1][y-2][1] = 1;
     }
   }
   if(x-1 >= 0 && y+2 < 8){
-    if(!(board[x-1][y+2][0].team === board[x][y].team)){
+    if(!(board[x-1][y+2][0].team === board[x][y][0].team)){
       board[x-1][y+2][1] = 1;
     }
   }
   if(x-1 >= 0 && y-2 >=0){
-    if(!(board[x-1][y-2][0].team === board[x][y].team)){
+    if(!(board[x-1][y-2][0].team === board[x][y][0].team)){
       board[x-1][y-2][1] = 1;
     }
   }
