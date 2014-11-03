@@ -10,12 +10,13 @@ $(document).ready(function(){
   $(this).removeClass('selected');
   return;
   }
-    for (var i = 0; i < $td.length; i++){
-      if ($td[i].classList.contains('selected')) {
-         alert("You already have a piece selected"); 
-         return;
-      }
+  for (var i = 0; i < $td.length; i++){
+    if ($td[i].classList.contains('selected')) {
+      $td[i].classList.remove('selected');
+      this.classList.add('selected');
+      return;
     }
+  }
   $(this).addClass('selected');
   
   var data = [];
