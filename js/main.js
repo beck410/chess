@@ -142,6 +142,51 @@ var greyRook = {
 var greyKnight = {
   image:"images/g-knight.png",
   move: function(){
+    if(board[x+2][y+1]){
+      if(!(board[x+2][y+1][0].team === board[x][y].team)){
+        board[x+2][y+1][1] = 1;
+      }
+    }
+    if(board[x+2][y-1]){
+      if(!(board[x+2][y-1][0].team === board[x][y].team)){
+        board[x+2][y-1][1] = 1;
+      }
+    }
+    if(board[x+2][y+1]){
+      if(!(board[x+2][y+1][0].team === board[x][y].team)){
+        board[x+2][y+1][1] = 1;
+      }
+    }
+    if(board[x-2][y+1]){
+      if(!(board[x-2][y+1][0].team === board[x][y].team)){
+        board[x-2][y+1][1] = 1;
+      }
+    }
+    if(board[x-2][y-1]){
+      if(!(board[x-2][y-1][0].team === board[x][y].team)){
+        board[x-2][y-1][1] = 1;
+      }
+    }
+    if(board[x+1][y+2]){
+      if(!(board[x+1][y+2][0].team === board[x][y].team)){
+        board[x+1][y+2][1] = 1;
+      }
+    }
+    if(board[x+1][y-2]){
+      if(!(board[x+1][y-2][0].team === board[x][y].team)){
+        board[x+1][y-2][1] = 1;
+      }
+    }
+    if(board[x-1][y+2]){
+      if(!(board[x-1][y+2][0].team === board[x][y].team)){
+        board[x-1][y+2][1] = 1;
+      }
+    }
+    if(board[x-1][y-2]){
+      if(!(board[x-1][y-2][0].team === board[x][y].team)){
+        board[x-1][y-2][1] = 1;
+      }
+    }
   }
 };
 var greyBishop = {
@@ -363,7 +408,51 @@ var orangeRook = {
 };
 var orangeKnight = {
   image: "images/o-knight.png",
-  move: function(){
+  move: function(){if(board[x+2][y+1]){
+    if(!(board[x+2][y+1][0].team === board[x][y].team)){
+      board[x+2][y+1][1] = 1;
+    }
+  }
+    if(board[x+2][y-1]){
+      if(!(board[x+2][y-1][0].team === board[x][y].team)){
+        board[x+2][y-1][1] = 1;
+      }
+    }
+    if(board[x+2][y+1]){
+      if(!(board[x+2][y+1][0].team === board[x][y].team)){
+        board[x+2][y+1][1] = 1;
+      }
+    }
+    if(board[x-2][y+1]){
+      if(!(board[x-2][y+1][0].team === board[x][y].team)){
+        board[x-2][y+1][1] = 1;
+      }
+    }
+    if(board[x-2][y-1]){
+      if(!(board[x-2][y-1][0].team === board[x][y].team)){
+        board[x-2][y-1][1] = 1;
+      }
+    }
+    if(board[x+1][y+2]){
+      if(!(board[x+1][y+2][0].team === board[x][y].team)){
+        board[x+1][y+2][1] = 1;
+      }
+    }
+    if(board[x+1][y-2]){
+      if(!(board[x+1][y-2][0].team === board[x][y].team)){
+        board[x+1][y-2][1] = 1;
+      }
+    }
+    if(board[x-1][y+2]){
+      if(!(board[x-1][y+2][0].team === board[x][y].team)){
+        board[x-1][y+2][1] = 1;
+      }
+    }
+    if(board[x-1][y-2]){
+      if(!(board[x-1][y-2][0].team === board[x][y].team)){
+        board[x-1][y-2][1] = 1;
+      }
+    }
   }
 };
 var orangeBishop = {
