@@ -78,14 +78,15 @@ var greyRook = {
   image:"images/g-rook.png",
   move: function(){
     //all squares left
-    leftCheck():
+    leftCheck();
     //all squares right
     rightCheck();
     //all squares below
     belowCheck();
     //all squares above
     aboveCheck();
-}
+  }
+};
 
 var greyKnight = {
   image:"images/g-knight.png",
@@ -110,7 +111,7 @@ var greyKing = {
   image:"images/g-king.png",
   move: function(){
     kingMove();
-  };
+  }
 };
 var greyQueen = {
   image:"images/g-queen.png",
@@ -149,7 +150,7 @@ var orangeRook = {
   image: "images/o-rook.png",
   move: function(){
     //all squares left
-    leftCheck():
+    leftCheck();
     //all squares right
     rightCheck();
     //all squares below
@@ -203,7 +204,7 @@ var orangeKing = {
   image: "images/o-king.png",
   move: function(){
     kingMove();
-  };
+  }
 };
 
 
