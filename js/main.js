@@ -7,7 +7,7 @@ $(document).ready(function(){
   $('td').click(function(){
   var $td = $('td');    
   if (this.classList.contains('selected')){
-  $(this).removeClass('selected');
+    $(this).removeClass('selected');
   return;
   }
   for (var i = 0; i < $td.length; i++){
