@@ -74,34 +74,6 @@ function createTable(board){
   })
 }
 
-//Diagonal Movement
-//
-//Top Left
-//for (var i = x, j = y; i <= 0, j <= 0; x--, y--
-//
-//Top Right
-//for (var i = x, j = y; i <= 0, j <= 0; x--, y++
-//
-//Bottom Left
-//for (var i = x, j = y; i <= 0, j <= 0; x++, y--
-//
-//Bottom Right
-//for (var i = x, j = y; i <= 0, j <= 0; x++, y++
-//
-//Vertical/Horizontal Movement
-//
-//Left
-//for (var i = x; i <= 0; x--
-//
-//Right
-//for (var i = x; i <= 0; x++
-//
-//Up
-//for (var j = y; j <= 0; y--
-//
-//Down
-//for (var j = y; j <= 0; y++
-
 //Objects for grey pieces
 var greyRook = {
   image:"images/g-rook.png",
@@ -114,14 +86,16 @@ var greyRook = {
     belowCheck();
     //all squares above
     aboveCheck();
-  }
+  },
+  team: "grey"
 };
 
 var greyKnight = {
   image:"images/g-knight.png",
   move: function(){
     knightMove();
-  }
+  },
+  team: "grey"
 };
 var greyBishop = {
   image:"images/g-bishop.png",
@@ -134,13 +108,15 @@ var greyBishop = {
     bottomRightCheck();
     //all squares diag bottom-left
     bottomLeftCheck();
-  }
+  },
+  team: "grey"
 };
 var greyKing = {
   image:"images/g-king.png",
   move: function(){
     kingMove();
-  }
+  },
+  team: "grey"
 };
 var greyQueen = {
   image:"images/g-queen.png",
@@ -161,7 +137,8 @@ var greyQueen = {
     bottomRightCheck();
     //all squares diag bottom-left
     bottomLeftCheck();
-  }
+  },
+  team: "grey"
 }
 var greyPawn = {
   image:"images/g-pawn.png",
@@ -192,7 +169,8 @@ var greyPawn = {
                  board[x+2][y][1] = 1;
                   }
 
-  }
+  },
+  team: "grey"
 };
 
 //Objects for orange pieces
@@ -225,7 +203,8 @@ var orangePawn = {
         if (x === 6) {
           board[x-2][y][1] = 1;
         }
-  }
+  },
+  team: "orange"
 };
 var orangeRook = {
   image: "images/o-rook.png",
@@ -238,13 +217,15 @@ var orangeRook = {
     belowCheck();
     //all squares above
     aboveCheck();
-  }
+  },
+  team: "orange"
 };
 var orangeKnight = {
   image: "images/o-knight.png",
   move: function(){
     knightMove();
-  }
+  },
+  team: "orange"
 };
 
 var orangeBishop = {
@@ -258,7 +239,8 @@ var orangeBishop = {
     bottomRightCheck();
     //all squares diag bottom-left
     bottomLeftCheck();
-  }
+  },
+  team: "orange"
 };
 var orangeQueen= {
   image: "images/o-queen.png",
@@ -279,13 +261,15 @@ var orangeQueen= {
     bottomRightCheck();
     //all squares diag bottom-left
     bottomLeftCheck();
-  }
-}
+  },
+  team: "orange"
+};
 var orangeKing = {
   image: "images/o-king.png",
   move: function(){
     kingMove();
-  }
+  },
+  team: "orange"
 };
 
 
