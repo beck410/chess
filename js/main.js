@@ -305,6 +305,19 @@ function belowCheck(){
   }
 }
 
+//all squares above
+function aboveCheck(){
+  for(var i=x-1; i<=0; i--){
+    if(board[i][y][0]){
+      if(board[i][y][0].team === board[x][y][0].team){
+        return;
+      }
+      else{
+        board[i][y][1] = 1;
+      }
+    }
+  }
+}
 
 //all squares diag top-left
 function  topLeftCheck(){
