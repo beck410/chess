@@ -148,6 +148,27 @@ var greyQueen = {
 var greyPawn = {
   image:"images/g-pawn.png",
   move: function(){
+          //move ahead 1 spot
+          if (board[x-1][y][0]){
+                  board[x-1][y][1] = 1;
+                   }
+          //move diagonally right
+          if (board[x-1][y+1][1]){
+                  if (!(teammates === teammates)){
+                          board[x-1][y+1][1] = 1;
+                           }
+                         }
+          //move diagonally left
+          if (board[x-1][y-1][1]){
+                  if (!(teammates === teammates)){
+                          board[x-1][y-1][1] = 1;
+                           }
+                         }
+         //move forward 2 spots on first move
+         if (x === 1) {
+                 board[x-2][y][1] = 1;
+                  }
+
   }
 };
 
@@ -155,6 +176,26 @@ var greyPawn = {
 var orangePawn = {
   image: "images/o-pawn.png",
   move: function(){
+            //move ahead 1 spot
+          if (board[x+1][y][0]){
+                 board[x+1][y][1] = 1;
+                   }
+          //move diagonally right
+          if (board[x+1][y+1][1]){
+                  if (!(teammates === teammates)){
+                          board[x+1][y+1][1] = 1;
+                           }
+                         }
+          //move diagonally left
+          if (board[x+1][y-1][1]){
+                  if (!(teammates === teammates)){
+                          board[x+1][y-1][1] = 1;
+                           }
+                         }
+         //move forward 2 spots on first move
+         if (x === 6) {
+                 board[x+2][y][1] = 1;
+                  }
   }
 };
 var orangeRook = {
