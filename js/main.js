@@ -1,5 +1,7 @@
 var x;
 var y;
+var newx;
+var newY;
 var data = [];
 
 $(document).ready(function(){
@@ -8,17 +10,20 @@ $(document).ready(function(){
 
 });
   function setXY(array){
-  //  array.forEach(function(row, i){
   for(i = 0; i< array.length ; i ++){
         for(var j=0 ; j <array[i].children.length; j++){
           if(array[i].children[j].classList.contains('selected') === true){
             x = i;
             y = j;
           }
-        }
+          if(array[i].children[j].classList.contains('chosen') === true){
+            newX = i;
+            newY = j;
+          }
     }
-  board[x][y][1] = 2;
   }
+  board[x][y][1] = 2;
+}
 
 //Generate Table in the DOM
 function createTable(board){
@@ -43,21 +48,30 @@ function createTable(board){
     });
 
   $('td').on('click',function(){
-  board.forEach(function(row){
-    row.forEach(function(cell){
-    cell[1]=0;
+    board.forEach(function(row){
+      row.forEach(function(cell){
+        cell[1]=0;
+      })
     })
+    if(this.classList.contains('highlight')){
+      this.classList.add('chosen')
+        var data = [];
+        $('table').find('tr').each(function(index,cell){data.push(cell)});
+        setXY(data);
+        board[newX][newY][0] = board[x][y][0];
+        board[x][y][0] = 0;
+        createTable(board);
+        return;
+    } else{
+      $('td').removeClass('selected');
+      this.classList.add('selected');
+      var data = [];
+      $('table').find('tr').each(function(index,cell){data.push(cell)});
+      setXY(data);
+      board[x][y][0].move();
+      createTable(board);
+    }
   })
-  $('td').removeClass('selected');
-  this.classList.add('selected');
-  var data = [];
-  $('table').find('tr').each(function(index,cell){data.push(cell)});
-  setXY(data);
-  board[x][y][0].move();
-  createTable(board);
-
-  })
-
 }
 
 //Diagonal Movement
