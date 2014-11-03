@@ -4,27 +4,9 @@ var data = [];
 
 $(document).ready(function(){
   createTable(board);
-  $('td').click(function(){
-  var $td = $('td');
-  if (this.classList.contains('selected')){
-    $(this).removeClass('selected');
-  return;
-  }
-  for (var i = 0; i < $td.length; i++){
-    if ($td[i].classList.contains('selected')) {
-      $td[i].classList.remove('selected');
-      this.classList.add('selected');
-      return;
-    }
-  }
-  $(this).addClass('selected');
 
-  var data = [];
-  $('table').find('tr').each(function(index,cell){data.push(cell)});
-  console.log(data);
-    setXY(data);
-  })
 
+});
   function setXY(array){
   //  array.forEach(function(row, i){
   for(i = 0; i< array.length ; i ++){
@@ -35,12 +17,12 @@ $(document).ready(function(){
           }
         }
     }
+  board[x][y][1] = 2;
   }
-});
 
 //Generate Table in the DOM
 function createTable(board){
-  $('table').innerHTML = '';
+  $('table').empty()
   board.forEach(function(row){
     var $tr = $('<tr>');
     row.forEach(function(cell){
@@ -51,10 +33,32 @@ function createTable(board){
       if(cell[1] === 1){
         $td.addClass('highlight');
       }
+      if(cell[1] === 2){
+        $td.addClass('selected');
+      }
       $tr.append($td);
       });
     $('table').append($tr);
     });
+
+  $('td').on('click',function(){
+  board.forEach(function(row){
+    row.forEach(function(cell){
+      if(cell[1]=== 2){
+        cell[1] = 0;
+      }
+    })
+  })
+  this.classList.add('selected');
+
+  var data = [];
+  $('table').find('tr').each(function(index,cell){data.push(cell)});
+  setXY(data);
+  board[x][y][0].move();
+  createTable(board);
+
+  })
+
 }
 
 //Diagonal Movement
@@ -386,45 +390,42 @@ function kingMove(){
 }
 
 function knightMove(){
-  if(!(board[x+2][y+1][0].team === board[x][y].team)){
-    board[x+2][y+1][1] = 1;
-  }
-  if(board[x+2][y-1]){
+  if(x+2<8 && y+1 <8){
+    if(!(board[x+2][y+1][0].team === board[x][y].team)){
+      board[x+2][y+1][1] = 1;
+    }
+}
+  if(x+2<8 && y-1 >=0){
     if(!(board[x+2][y-1][0].team === board[x][y].team)){
       board[x+2][y-1][1] = 1;
     }
   }
-  if(board[x+2][y+1]){
-    if(!(board[x+2][y+1][0].team === board[x][y].team)){
-      board[x+2][y+1][1] = 1;
-    }
-  }
-  if(board[x-2][y+1]){
+  if(x-2 >= 0 && y+1 < 8){
     if(!(board[x-2][y+1][0].team === board[x][y].team)){
       board[x-2][y+1][1] = 1;
     }
   }
-  if(board[x-2][y-1]){
+  if(x-2 >= 0 && y-1 >= 0){
     if(!(board[x-2][y-1][0].team === board[x][y].team)){
       board[x-2][y-1][1] = 1;
     }
   }
-  if(board[x+1][y+2]){
+  if(x+1 < 8 && y+2 < 8){
     if(!(board[x+1][y+2][0].team === board[x][y].team)){
       board[x+1][y+2][1] = 1;
     }
   }
-  if(board[x+1][y-2]){
+  if(x+1 < 8 && y-2 >= 0){
     if(!(board[x+1][y-2][0].team === board[x][y].team)){
       board[x+1][y-2][1] = 1;
     }
   }
-  if(board[x-1][y+2]){
+  if(x-1 >= 0 && y+2 < 8){
     if(!(board[x-1][y+2][0].team === board[x][y].team)){
       board[x-1][y+2][1] = 1;
     }
   }
-  if(board[x-1][y-2]){
+  if(x-1 >= 0 && y-2 >=0){
     if(!(board[x-1][y-2][0].team === board[x][y].team)){
       board[x-1][y-2][1] = 1;
     }
