@@ -48,6 +48,7 @@ function createTable(board){
     cell[1]=0;
     })
   })
+  $('td').removeClass('selected');
   this.classList.add('selected');
   var data = [];
   $('table').find('tr').each(function(index,cell){data.push(cell)});
