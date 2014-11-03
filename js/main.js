@@ -5,7 +5,7 @@ var data = [];
 $(document).ready(function(){
   createTable(board);
   $('td').click(function(){
-  var $td = $('td');    
+  var $td = $('td');
   if (this.classList.contains('selected')){
     $(this).removeClass('selected');
   return;
@@ -18,7 +18,7 @@ $(document).ready(function(){
     }
   }
   $(this).addClass('selected');
-  
+
   var data = [];
   $('table').find('tr').each(function(index,cell){data.push(cell)});
   console.log(data);
@@ -273,9 +273,6 @@ function leftCheck(){
       else{
         board[x][i][1] = 1;
       }
-      return;
-    } else{
-      board[x][i][1] = 1;
     }
   }
 }
@@ -290,9 +287,6 @@ function rightCheck(){
       else{
         board[x][i][1] = 1;
       }
-      return;
-    } else{
-      board[x][i][1] = 1;
     }
   }
 }
@@ -307,33 +301,10 @@ function belowCheck(){
       else{
         board[i][y][1] = 1;
       }
-      return;
-    } else{
-      board[i][y][1] = 1;
     }
   }
 }
 
-    //all squares above
-    for(var i=x-1; i<=0; i--) {
-      if(board[i][y][0]){
-        if(board[i][y][0].team === board[x][y][0].team){
-          return;
-        }
-        else{
-          board[i][y][1] = 1;
-        }
-        return;
-      }
-      else{
-        board[i][y][1] = 1;
-      }
-      return;
-    } else{
-      board[i][y][1] = 1;
-    }
-  }
-}
 
 //all squares diag top-left
 function  topLeftCheck(){
@@ -345,9 +316,6 @@ function  topLeftCheck(){
       else{
         board[i][j][1] = 1;
       }
-      return;
-    } else{
-      board[i][j][1] = 1;
     }
   }
 }
@@ -362,9 +330,6 @@ function topRightCheck(){
       else{
         board[i][j][1] = 1;
       }
-      return;
-    } else{
-      board[i][j][1] = 1;
     }
   }
 }
@@ -379,9 +344,6 @@ function bottomRightCheck(){
       else{
         board[i][j][1] = 1;
       }
-      return;
-    } else{
-      board[i][j][1] = 1;
     }
   }
 }
@@ -396,9 +358,6 @@ function bottomLeftCheck(){
       else{
         board[i][j][1] = 1;
       }
-      return;
-    } else{
-      board[i][j][1] = 1;
     }
   }
 }
