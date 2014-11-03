@@ -1,17 +1,29 @@
 var x;
-  var y;
-  var data = [];
+var y;
+var data = [];
 
 $(document).ready(function(){
   createTable(board);
   $('td').click(function(){
-  $(this).toggleClass('selected')
+  var $td = $('td');    
+  if (this.classList.contains('selected')){
+    $(this).removeClass('selected');
+  return;
+  }
+  for (var i = 0; i < $td.length; i++){
+    if ($td[i].classList.contains('selected')) {
+      $td[i].classList.remove('selected');
+      this.classList.add('selected');
+      return;
+    }
+  }
+  $(this).addClass('selected');
+  
   var data = [];
-  $('table').find('tr').each(function(index,cell){ data.push(cell)});
+  $('table').find('tr').each(function(index,cell){data.push(cell)});
   console.log(data);
     setXY(data);
   })
-
 
   function setXY(array){
   //  array.forEach(function(row, i){
@@ -302,11 +314,15 @@ function belowCheck(){
   }
 }
 
-//all squares above
-function aboveCheck(){
-  for(var i=x-1; i<=0; i--) {
-    if(board[i][y][0]){
-      if(board[i][y][0].team === board[x][y][0].team){
+    //all squares above
+    for(var i=x-1; i<=0; i--) {
+      if(board[i][y][0]){
+        if(board[i][y][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][y][1] = 1;
+        }
         return;
       }
       else{
