@@ -1,6 +1,6 @@
 var x;
-  var y;
-  var data = [];
+var y;
+var data = [];
 
 $(document).ready(function(){
   createTable(board);
@@ -10,12 +10,12 @@ $(document).ready(function(){
   $(this).removeClass('selected');
   return;
   }
-    for (var i = 0; i < $td.length; i++){
-      if ($td[i].classList.contains('selected')) {
-         alert("You already have a piece selected"); 
-         return;
-      }
+  for (var i = 0; i < $td.length; i++){
+    if ($td[i].classList.contains('selected')) {
+      alert("You already have a piece selected"); 
+      return;
     }
+  }
   $(this).addClass('selected');
   
   var data = [];
