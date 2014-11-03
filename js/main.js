@@ -32,6 +32,7 @@ function createTable(board){
       }
       if(cell[1] === 1){
         $td.addClass('highlight');
+        $td.css('background-color', '#46685b');
       }
       if(cell[1] === 2){
         $td.addClass('selected');
@@ -159,13 +160,13 @@ var greyPawn = {
                    }
           //move diagonally right
           if (board[x+1][y+1][1]){
-                  if (!(teammates === teammates)){
+                  if (!(board[x+1][y+1][0].team === board[x][y][0].team)){
                           board[x+1][y+1][1] = 1;
                            }
                          }
           //move diagonally left
           if (board[x+1][y-1][1]){
-                  if (!(teammates === teammates)){
+                  if (!(board[x+1][y-1][0].team === board[x][y][0].team)){
                           board[x+1][y-1][1] = 1;
                            }
                          }
@@ -187,13 +188,13 @@ var orangePawn = {
                    }
           //move diagonally right
           if (board[x-1][y+1][1]){
-                  if (!(teammates === teammates)){
+                  if (!(board[x-1][y+1][0].team === board[x][y][0].team )){
                           board[x-1][y+1][1] = 1;
                            }
                          }
           //move diagonally left
           if (board[x-1][y-1][1]){
-                  if (!(teammates === teammates)){
+                  if (!(board[x-1][y-1][0].team === board[x][y][0].team)){
                           board[x-1][y-1][1] = 1;
                            }
                          }
