@@ -333,12 +333,17 @@ function aboveCheck(){
 
 //all squares diag top-left
 function  topLeftCheck(){
-  for(var i=x, j=y; i<0 || j<=0; i--, j--){
-    if(board[i][j][0]){
-      if(board[i][j][0].team === board[x][y][0].team){
-        return;
-      }
-      else{
+  for(var i=x-1, j=y-1; i>=0 && j>=0; i--, j--){
+    if(i>=0 && j >=0){
+      if(board[i][j][0]){
+        if(board[i][j][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][j][1] = 1;
+          return;
+        }
+      } else{
         board[i][j][1] = 1;
       }
     }
