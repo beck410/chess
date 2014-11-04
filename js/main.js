@@ -352,26 +352,36 @@ function  topLeftCheck(){
 
 //all squares diag top-right
 function topRightCheck(){
-  for(var i=x, j=y; i<=0 || j<=0; i--, j++){
+  for(var i=x-1, j=y+1; i>=0 && j<8; i--, j++){
+  if(i>=0 && j <8){
     if(board[i][j][0]){
       if(board[i][j][0].team === board[x][y][0].team){
         return;
       }
       else{
         board[i][j][1] = 1;
+        return;
       }
+    } else{
+      board[i][j][1] = 1;
     }
   }
+}
 }
 
 //all squares diag bottom-right
 function bottomRightCheck(){
-  for(var i=x, j=y; i<=0 || j<=0; i++, j++){
-    if(board[i][j][0]){
-      if(board[i][j][0].team === board[x][y][0].team){
-        return;
-      }
-      else{
+  for(var i=x+1, j=y+1; i<8 && j<8; i++, j++){
+    if(i<8 && j <8){
+      if(board[i][j][0]){
+        if(board[i][j][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][j][1] = 1;
+          return;
+        }
+      } else{
         board[i][j][1] = 1;
       }
     }
@@ -380,12 +390,17 @@ function bottomRightCheck(){
 
 //all squares diag bottom-left
 function bottomLeftCheck(){
-  for(var i=x, j=y; i<=0 || j<=0; i++, j--){
-    if(board[i][j][0]){
-      if(board[i][j][0].team === board[x][y][0].team){
-        return;
-      }
-      else{
+for(var i=x+1, j=y-1; i<8 && j>=0; i++, j--){
+    if(i<8 && j >=0){
+      if(board[i][j][0]){
+        if(board[i][j][0].team === board[x][y][0].team){
+          return;
+        }
+        else{
+          board[i][j][1] = 1;
+          return;
+        }
+      } else{
         board[i][j][1] = 1;
       }
     }
