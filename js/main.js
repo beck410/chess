@@ -61,6 +61,7 @@ function createTable(board){
         board[newX][newY][0] = board[x][y][0];
         board[x][y][0] = 0;
         createTable(board);
+        kingCheck();
         return;
     } else{
       $('td').removeClass('selected');
