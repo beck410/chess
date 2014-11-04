@@ -175,8 +175,10 @@ var greyPawn = {
           }
          //move forward 2 spots on first move
          if (x === 1) {
+          if(!(board[x+1][y][0])){
                  board[x+2][y][1] = 1;
-                  }
+          }
+         }
 
   },
   team: "grey",
@@ -210,7 +212,9 @@ var orangePawn = {
         }
         //move forward 2 spots on first move
         if (x === 6) {
+          if(!(board[x-1][y][0])){
           board[x-2][y][1] = 1;
+          }
         }
   },
   team: "orange",
@@ -467,4 +471,38 @@ function knightMove(){
       board[x-1][y-2][1] = 1;
     }
   }
+}
+
+function kingCheck(){
+  if(turn%2 === 0){
+      for(var i = 0; i < board.length; i++){
+        for(var j = 0; j < board.length; j++){
+            if(board[i][j][0].team === 'orange'){
+              board[i][j][0].move()
+            } 
+        }
+        for(var i = 0; i < board.length; i++){
+            for(var j = 0; j < board.length; j++){
+                if(board[i][j][0] === greyKing && board[i][j][1] === 1){
+                    alert("The grey king is in check.");
+                }
+            }
+        }
+      } 
+  } else {
+      for(var i = 0; i < board.length; i++){
+        for(var j = 0; j < board.length; j++){
+            if(board[i][j][0].team === 'grey'){
+              board[i][j][0].move()
+            } 
+        }
+        for(var i = 0; i < board.length; i++){
+            for(var j = 0; j < board.length; j++){
+                if(board[i][j][0] === orangeKing && board[i][j][1] === 1){
+                    alert("The orange king is in check.");
+                }
+            }
+        }
+      } 
+  }  
 }
