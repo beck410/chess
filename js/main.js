@@ -277,14 +277,14 @@ var board = [[[greyRook,0],[greyKnight,0],[greyBishop,0],[greyQueen,0],[greyKing
 
 function leftCheck(){
   //all squares left
-  for(var i=y-i; i<=0; i--){
+  for(var i=y-1; i>-1; i--){
     if(board[x][i][0]){
-      if(board[x][i][0].team === board[x][y][0].team){
-        return;
+      if(!(board[x][i][0].team === board[x][y][0].team)){
+              board[x][i][1] = 1;
       }
-      else{
+      return;
+    } else{
         board[x][i][1] = 1;
-      }
     }
   }
 }
@@ -293,12 +293,12 @@ function leftCheck(){
 function rightCheck(){
   for(var i=y+1; i<8; i++){
     if(board[x][i][0]){
-      if(board[x][i][0].team === board[x][y][0].team){
-        return;
+      if(!(board[x][i][0].team === board[x][y][0].team)){
+              board[x][i][1] = 1;
       }
-      else{
+      return;
+    } else{
         board[x][i][1] = 1;
-      }
     }
   }
 }
@@ -307,26 +307,26 @@ function rightCheck(){
 function belowCheck(){
   for(var i=x+1; i<8; i++){
     if(board[i][y][0]){
-      if(board[i][y][0].team === board[x][y][0].team){
-        return;
-      }
-      else{
+      if(!(board[i][y][0].team === board[x][y][0].team)){
         board[i][y][1] = 1;
       }
+      return;
+    } else{
+        board[i][y][1] = 1;
     }
   }
 }
 
 //all squares above
 function aboveCheck(){
-  for(var i=x-1; i<=0; i--){
-    if(board[i][y][0]){
-      if(board[i][y][0].team === board[x][y][0].team){
-        return;
-      }
-      else{
-        board[i][y][1] = 1;
-      }
+  for(var i=x-1; i>-1; i--){
+  if(board[i][y][0]){
+    if(!(board[i][y][0].team === board[x][y][0].team)){
+      board[i][y][1] = 1;
+    }
+    return;
+  } else{
+          board[i][y][1] = 1;
     }
   }
 }
