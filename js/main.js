@@ -4,6 +4,8 @@ var newx;
 var newY;
 var data = [];
 
+var turn = 0;
+
 $(document).ready(function(){
   createTable(board);
 
@@ -47,30 +49,37 @@ function createTable(board){
     $('table').append($tr);
     });
 
-  $('td').on('click',function(){
-    board.forEach(function(row){
-      row.forEach(function(cell){
-        cell[1]=0;
+    $('td').on('click',function(){
+
+      board.forEach(function(row){
+        row.forEach(function(cell){
+          cell[1]=0;
+        })
       })
-    })
-    if(this.classList.contains('highlight')){
-      this.classList.add('chosen')
+      if(this.classList.contains('highlight')){
+        this.classList.add('chosen')
+          var data = [];
+          $('table').find('tr').each(function(index,cell){data.push(cell)});
+          setXY(data);
+          board[newX][newY][0] = board[x][y][0];
+          board[x][y][0] = 0;
+          createTable(board);
+          turn++;
+          return;
+      } else{
+        $('td').removeClass('selected');
+        this.classList.add('selected');
         var data = [];
         $('table').find('tr').each(function(index,cell){data.push(cell)});
         setXY(data);
-        board[newX][newY][0] = board[x][y][0];
-        board[x][y][0] = 0;
-        createTable(board);
-        return;
-    } else{
-      $('td').removeClass('selected');
-      this.classList.add('selected');
-      var data = [];
-      $('table').find('tr').each(function(index,cell){data.push(cell)});
-      setXY(data);
-      board[x][y][0].move();
-      createTable(board);
-    }
+        if(turn%2 === 0 && board[x][y][0].team === "orange") {
+          board[x][y][0].move();
+          createTable(board);
+        } else if(turn%2 != 0 && board[x][y][0].team ===   "grey"){
+          board[x][y][0].move();
+          createTable(board);
+        }
+      }
   })
 }
 
@@ -87,7 +96,7 @@ var greyRook = {
     //all squares above
     aboveCheck();
   },
-  team: "grey"
+  team: "grey",
 };
 
 var greyKnight = {
@@ -95,7 +104,7 @@ var greyKnight = {
   move: function(){
     knightMove();
   },
-  team: "grey"
+  team: "grey",
 };
 var greyBishop = {
   image:"images/g-bishop.png",
@@ -109,14 +118,14 @@ var greyBishop = {
     //all squares diag bottom-left
     bottomLeftCheck();
   },
-  team: "grey"
+  team: "grey",
 };
 var greyKing = {
   image:"images/g-king.png",
   move: function(){
     kingMove();
   },
-  team: "grey"
+  team: "grey",
 };
 var greyQueen = {
   image:"images/g-queen.png",
@@ -138,7 +147,7 @@ var greyQueen = {
     //all squares diag bottom-left
     bottomLeftCheck();
   },
-  team: "grey"
+  team: "grey",
 }
 var greyPawn = {
   image:"images/g-pawn.png",
@@ -170,7 +179,7 @@ var greyPawn = {
                   }
 
   },
-  team: "grey"
+  team: "grey",
 };
 
 //Objects for orange pieces
@@ -204,7 +213,7 @@ var orangePawn = {
           board[x-2][y][1] = 1;
         }
   },
-  team: "orange"
+  team: "orange",
 };
 var orangeRook = {
   image: "images/o-rook.png",
@@ -218,14 +227,14 @@ var orangeRook = {
     //all squares above
     aboveCheck();
   },
-  team: "orange"
+  team: "orange",
 };
 var orangeKnight = {
   image: "images/o-knight.png",
   move: function(){
     knightMove();
   },
-  team: "orange"
+  team: "orange",
 };
 
 var orangeBishop = {
@@ -240,7 +249,7 @@ var orangeBishop = {
     //all squares diag bottom-left
     bottomLeftCheck();
   },
-  team: "orange"
+  team: "orange",
 };
 var orangeQueen= {
   image: "images/o-queen.png",
@@ -269,7 +278,7 @@ var orangeKing = {
   move: function(){
     kingMove();
   },
-  team: "orange"
+  team: "orange",
 };
 
 
