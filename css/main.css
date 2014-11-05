@@ -27,7 +27,7 @@ table{
 h1 {
         text-align: center;
         font-family: 'Bree Serif', serif;
-        margin-bottom: .5em;
+        margin-bottom: .2em;
 }
 body {
         background-color: #C1BDB8;
@@ -35,4 +35,13 @@ body {
 }
 .highlight {
         background-color: #aab668;
+}
+
+#players-turn {
+  text-align: center;
+  font-family: 'Bree Serif', serif;
+  font-size: 1.3em;
+  color: #4A4943;
+  margin-top: .5em;
+  
 }
