@@ -80,7 +80,8 @@ function createTable(board){
           createTable(board);
         }
       }
-  })
+      kingCheck()
+  }) 
 }
 
 //Objects for grey pieces
@@ -473,7 +474,7 @@ function knightMove(){
   }
 }
 
-function kingCheck(){
+var kingCheck = function (){
   if(turn%2 === 0){
       for(var i = 0; i < board.length; i++){
         for(var j = 0; j < board.length; j++){
@@ -481,28 +482,29 @@ function kingCheck(){
               board[i][j][0].move()
             } 
         }
-        for(var i = 0; i < board.length; i++){
-            for(var j = 0; j < board.length; j++){
-                if(board[i][j][0] === greyKing && board[i][j][1] === 1){
-                    alert("The grey king is in check.");
-                }
+      }
+      for(var i = 0; i < board.length; i++){
+        for(var j = 0; j < board.length; j++){
+            if(board[i][j][0] === greyKing && board[i][j][1] === 1){
+                alert("The grey king is in check.");
             }
         }
-      } 
-  } else {
+      }
+  } 
+  if(turn%2 === 1){
       for(var i = 0; i < board.length; i++){
         for(var j = 0; j < board.length; j++){
             if(board[i][j][0].team === 'grey'){
               board[i][j][0].move()
             } 
         }
-        for(var i = 0; i < board.length; i++){
-            for(var j = 0; j < board.length; j++){
-                if(board[i][j][0] === orangeKing && board[i][j][1] === 1){
-                    alert("The orange king is in check.");
-                }
+      }
+      for(var i = 0; i < board.length; i++){
+        for(var j = 0; j < board.length; j++){
+            if(board[i][j][0] === orangeKing && board[i][j][1] === 1){
+                alert("The orange king is in check.");
             }
         }
-      } 
+      }   
   }  
 }
