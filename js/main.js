@@ -80,7 +80,6 @@ function createTable(board){
           createTable(board);
         }
       }
-      kingCheck()
   }) 
 }
 
@@ -490,8 +489,7 @@ var kingCheck = function (){
             }
         }
       }
-  } 
-  if(turn%2 === 1){
+  } else {
       for(var i = 0; i < board.length; i++){
         for(var j = 0; j < board.length; j++){
             if(board[i][j][0].team === 'grey'){
