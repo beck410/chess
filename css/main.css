@@ -3,11 +3,11 @@
 
 
 tr:nth-child(even) td:nth-child(odd), tr:nth-child(odd) td:nth-child(even) {
-        background-color: #F8F8F7;
+        background-color: #000;
 
 }
 tr:nth-child(odd) td:nth-child(odd), tr:nth-child(even) td:nth-child(even) {
-        background-color: #000;
+        background-color: #F8F8F7;
 
 }
 table {
@@ -43,5 +43,5 @@ body {
   font-size: 1.3em;
   color: #4A4943;
   margin-top: .5em;
-  
+
 }
