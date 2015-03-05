@@ -1,7 +1,7 @@
 #Chess
 
 ##Synopsis
-Game created for [NSS](www.nashvillesoftwareschool.com) Collaboration Assignment 
+Game created for [NSS](www.nashvillesoftwareschool.com) Cohort 7 Collaboration Assignment 
 
 ##Rules for Game
 Link to the rules
